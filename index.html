@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./heart.ico" />
+  <title>夕会</title>
+
+  <!-- style -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100vh;
+    }
+
+    #snow {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: url("xh.png"), url("xh1.png");
+      -webkit-animation: snow 15s linear infinite;
+      animation: snow 15s linear infinite;
+      z-index: 99;
+    }
+
+    @keyframes snow {
+      0% {
+        background-position: 0 0, 0 0;
+      }
+
+      100% {
+        background-position: 500px 1000px, 500px 500px;
+      }
+    }
+
+    @-webkit-keyframes snow {
+      0% {
+        background-position: 0 0, 0 0;
+      }
+
+      100% {
+        background-position: 500px 1000px, 500px 1500px;
+      }
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .main-container {
+      width: 100%;
+      height: 100%;
+      background: url(./images/xiaoyang.jpg) no-repeat;
+      background-size: 100% 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0px 100px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 140px;
+      color: red;
+      font-weight: 500;
+    }
+
+    .right-box {
+      margin-top: 100px;
+      font-size: 60px;
+      font-weight: 500;
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+    }
+
+    .class-name {
+      text-align: center;
+    }
+
+    .times {
+      text-align: center;
+    }
+  </style>
+
+  <!-- script -->
+
+</head>
+
+<body>
+  <div class="container">
+    <div id="snow">
+    </div>
+    <div class="main-container">
+      <div class="title">夕会总结</div>
+      <div style="height: 60px;"></div>
+      <div class="right-box">
+        <div class="class-name">一五十班</div>
+        <div id="weeks" class="times">time</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 使用 DOMContentLoaded 事件确保页面加载完成后执行代码
+    document.addEventListener('DOMContentLoaded', function () {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = now.getMonth() + 1; // 月份从 0 开始，所以要加 1
+      const day = now.getDate();
+
+      console.log(`当前日期是：${year}-${month}-${day}`);
+      const result = `${year}年${month}月${day}日`;
+
+      const timesEle = document.getElementById('weeks');
+      timesEle.textContent = result
+    });
+
+    // async function updateContent() {
+    //   // 模拟异步操作
+    //   await new Promise(resolve => setTimeout(resolve, 1000));
+    //   const now = new Date();
+    //   const year = now.getFullYear();
+    //   const month = now.getMonth() + 1; // 月份从 0 开始，所以要加 1
+    //   const day = now.getDate();
+    //   const result = `${year}年${month}月${day}日`;
+
+    //   const timesEle = document.getElementById('weeks');
+    //   timesEle.textContent = result
+    // }
+
+    // updateContent();
+
+  </script>
+</body>
+
+</html>
